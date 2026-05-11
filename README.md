@@ -1,6 +1,6 @@
 # Gerador de Token em Python
 
-Um gerador de senhas desenvolvido em Python com foco em prática de lógica de programação, manipulação de strings e estruturação de funções.
+Um gerador de Token desenvolvido em Python com foco em prática de lógica de programação, manipulação de strings e estruturação de funções.
 
 ## Funcionalidades
 
