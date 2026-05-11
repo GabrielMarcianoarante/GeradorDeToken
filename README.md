@@ -1,10 +1,10 @@
-# Gerador de Senhas em Python
+# Gerador de Token em Python
 
 Um gerador de senhas desenvolvido em Python com foco em prática de lógica de programação, manipulação de strings e estruturação de funções.
 
 ## Funcionalidades
 
-- Geração de senhas aleatórias
+- Geração de Token aleatórias
 - Escolha da quantidade de caracteres
 - Opção de incluir caracteres especiais
 - Verificação de força da senha
