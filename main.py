@@ -26,11 +26,11 @@ def gerador():
         while True:
             opcao = input(
                 "Deseja reiniciar (S/N)? "
-            ).lower()  # converter para minúsculo
+            ).lower()  
             if opcao not in ("s", "n"):
                 print("opcao invalida, deve ser S ou N")
             elif opcao == "n":
-                break  # sai do while interno, pois a opção é S ou N
+                break  
             else:
                 break
 
