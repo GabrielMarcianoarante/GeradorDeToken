@@ -54,57 +54,57 @@ O objetivo deste projeto é praticar fundamentos importantes da programação em
 
 ## Roadmap
 
-### Versão 1.0
-- [x] Geração de senha aleatória
-- [x] Escolha de quantidade de caracteres
-- [x] Suporte a caracteres especiais
-- [x] Verificação de força da senha
-- [x] Sistema de reinício
+### Versão 1.0 — Fundamentos do Python
+- [x] Geração de token aleatório
+- [x] Escolha da quantidade de caracteres
+- [x] Uso de funções
+- [x] Uso de loops (`while` e `for`)
+- [x] Uso de condicionais (`if`, `elif`, `else`)
+- [x] Manipulação de strings
+- [x] Uso das bibliotecas `random` e `string`
+- [x] Entrada de dados com `input()`
 
-### Versão 1.1
-- [ ] Melhor validação de entrada
-- [ ] Tratamento de erros com `try/except`
-- [ ] Melhor organização do código
+### Versão 1.1 — Melhorando a Lógica
+- [x] Validação básica de entrada
+- [] Tratamento de erros com `try/except`
+- [x] Separação de funções
+- [x] Melhor organização do código
 - [ ] Refatoração das funções
-- [ ] Melhor estrutura de loops
-- [ ] Correção de bugs
+- [ ] Melhor estrutura dos loops
+- [ ] Comentários no código
+- [ ] Melhor padronização de variáveis
 
-### Versão 1.2
+### Versão 1.2 — Novos Conceitos
+- [ ] Gerar múltiplos tokens
+- [ ] Salvar tokens em arquivo `.txt`
+- [ ] Histórico de tokens
+- [ ] Modularização do projeto
+- [ ] Uso de listas e dicionários
+- [ ] Menu interativo mais avançado
+
+### Versão 2.0 — Python Intermediário
 - [ ] Interface gráfica com Tkinter
-- [ ] Botão para copiar senha
-- [ ] Histórico de senhas
-- [ ] Exportação para arquivo `.txt`
-- [ ] Geração de múltiplas senhas
-- [ ] Sistema de configurações
+- [ ] Programação Orientada a Objetos (POO)
+- [ ] Uso de classes e objetos
+- [ ] Arquivos JSON
+- [ ] Melhor organização de pastas
+- [ ] Configurações personalizadas
 
-### Versão 2.0
-- [ ] Gerenciador de senhas
-- [ ] Criptografia de dados
-- [ ] Sistema de login
+### Versão 3.0 — Python Avançado
+- [ ] API com Flask ou FastAPI
 - [ ] Banco de dados SQLite
-- [ ] Salvamento seguro de credenciais
-- [ ] Pesquisa de senhas salvas
-
-### Versão 3.0
-- [ ] API utilizando Flask ou FastAPI
-- [ ] Interface Web
-- [ ] Deploy online
+- [ ] Sistema de login
+- [ ] Criptografia básica
+- [ ] Deploy da aplicação
 - [ ] Dockerização
-- [ ] Painel administrativo
-- [ ] Sistema de autenticação JWT
-- [ ] Arquitetura mais escalável
+- [ ] Testes automatizados
 
 ### Melhorias Futuras
-- [ ] Interface moderna
 - [ ] Tema dark/light
-- [ ] Integração com banco de dados externo
-- [ ] Geração de senhas corporativas
-- [ ] Sistema avançado de segurança
+- [ ] Interface moderna
+- [ ] Sistema de logs
+- [ ] CI/CD com GitHub Actions
 - [ ] Compatibilidade multiplataforma
-- [ ] Testes automatizados
-- [ ] CI/CD
-- [ ] Logs do sistema
-
 ## Autor
 
 Gabriel Marciano
