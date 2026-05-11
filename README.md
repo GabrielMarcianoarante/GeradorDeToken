@@ -66,7 +66,7 @@ O objetivo deste projeto é praticar fundamentos importantes da programação em
 
 ### Versão 1.1 — Melhorando a Lógica
 - [x] Validação básica de entrada
-- [] Tratamento de erros com `try/except`
+- [ ] Tratamento de erros com `try/except`
 - [x] Separação de funções
 - [x] Melhor organização do código
 - [ ] Refatoração das funções
