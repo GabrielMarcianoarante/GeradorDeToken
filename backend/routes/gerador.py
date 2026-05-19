@@ -4,14 +4,14 @@ import sqlite3
 
 Token = ""
 
+print("Bem-Vindo Ao Gerador De Tokens")
+Alternativa = input("Você quer gerar uma Token: ".lower())
+Caracteres = int(input("Quantos Caracteres deseja:  "))
+especial = input("Você Deseja Caracteres Especiais:  ".lower())
+quantidade = int(input('Voce que gerar quantos tokens: '))
 
 def gerador():
     while True:
-        print("Bem-Vindo Ao Gerador De Tokens")
-        Alternativa = input("Você quer gerar uma Token: ".lower())
-        Caracteres = int(input("Quantos Caracteres deseja:  "))
-        especial = input("Você Deseja Caracteres Especiais:  ".lower())
-
         if Alternativa == "sim" and especial == "sim" and Caracteres > 0:
             Token = ""
             for _ in range(Caracteres):
@@ -47,28 +47,37 @@ def Verificar(Token):
 
 
 def Salvar():
+
     Token = gerador()
+
     forca = Verificar(Token)
+
     connect = sqlite3.connect("Token.db")
+
     cursor = connect.cursor()
+
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS Tokens (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        Token TEXT NOT NULL,
-        forca TEXT NOT NULL
-    )
-""")
+        CREATE TABLE IF NOT EXISTS Tokens (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            Token TEXT NOT NULL,
+            forca TEXT NOT NULL
+        )
+    """)
 
     cursor.execute(
         "INSERT INTO Tokens (Token, forca) VALUES (?, ?)",
-        (Token, forca),
+        (Token, forca)
     )
-    connect.commit()
 
-    cursor.execute("SELECT * FROM Tokens")
-    print(cursor.fetchall())
+    connect.commit()
 
     connect.close()
 
+    print("Token salva com sucesso!")
 
-Salvar()
+def Tokens_gerador():
+    for _ in range(quantidade):
+        gerador()
+        Salvar()
+
+Tokens_gerador()
