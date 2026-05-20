@@ -13,4 +13,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     input.value = token;
 
+  // botão copiar - 20/05/25
+  btnCopiar.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(input.value);
+
+    // muda texto - 20/05/25
+    btnCopiar.textContent = "Copiado";
+
+    // muda cor - 20/05/25
+    btnCopiar.classList.add("copiado");
+
+    // volta ao normal - 20/05/25
+    setTimeout(() => {
+      btnCopiar.textContent = "Copiar";
+      btnCopiar.classList.remove("copiado");
+    }, 2000);
+  });
 });
