@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 import sqlite3
+import routes.gerador as gerador
 
 app = Flask(__name__)
 
@@ -37,6 +38,17 @@ def get_tokens():
             "erro": str(erro)
         }), 500
 
+@app.route("/gerar-token", methods=["POST"])
+def gerar_token():
+    try:
+        gerador.Salvar()
+        return jsonify({
+            "mensagem": "Token gerado e salvo com sucesso!"
+        })
+    except Exception as erro:
+        return jsonify({
+            "erro": str(erro)
+        }), 500
 
 if __name__ == "__main__":
     app.run(debug=True)
