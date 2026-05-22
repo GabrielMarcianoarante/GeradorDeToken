@@ -1,40 +1,34 @@
 import random
 import string
 import sqlite3
-
+import requests
 Token = ""
+quantidade = 0
+Caracteres = 0
 
-print("Bem-Vindo Ao Gerador De Tokens")
-Alternativa = input("Você quer gerar uma Token: ".lower())
-Caracteres = int(input("Quantos Caracteres deseja:  "))
-especial = input("Você Deseja Caracteres Especiais:  ".lower())
-quantidade = int(input('Voce que gerar quantos tokens: '))
-
+def receberquantidade():
+    global quantidade
+    global Caracteres
+    Caracteres = requests.get("http://127.0.0.1:5000/receber-valor").json().get("caracteres", 0)
+    quantidade = requests.get("http://127.0.0.1:5000/receber-valor").json().get("quantidade", 0)
 def gerador():
-    while True:
-        if Alternativa == "sim" and especial == "sim" and Caracteres > 0:
-            Token = ""
-            for _ in range(Caracteres):
-                caracter = string.ascii_letters + string.digits + string.punctuation
-                Token += random.choice(caracter)
-            return Token
-        elif Alternativa == "sim" and Caracteres > 0:
-            Token = ""
-            for _ in range(Caracteres):
-                caracter = string.ascii_letters + string.digits
-                Token += random.choice(caracter)
-            return Token
-        else:
-            print("Não foi Gerada A Sua Token")
+    if quantidade < 1 or Caracteres < 1:
         while True:
-            opcao = input("Deseja reiniciar (S/N)? ").lower()
-            if opcao not in ("s", "n"):
-                print("opcao invalida, deve ser S ou N")
-            elif opcao == "n":
-                break
-            else:
-                break
+                Token = ""
+                for _ in range(Caracteres):
+                    caracter = string.ascii_letters + string.digits + string.punctuation
+                    Token += random.choice(caracter)
+                return Token
 
+def gerador_com_especial():
+    while True:
+        Token = ""
+        for _ in range(Caracteres):
+            caracter = string.ascii_letters + string.digits + string.punctuation
+            Token += random.choice(caracter)
+        if any(c in string.punctuation for c in Token):
+            return Token
+        print("Não foi Gerada A Sua Token")
 
 def Verificar(Token):
     leitor = len(Token)
