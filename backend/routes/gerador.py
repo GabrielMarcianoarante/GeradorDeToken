@@ -12,12 +12,13 @@ def receberquantidade():
     Caracteres = requests.get("http://127.0.0.1:5000/receber-valor").json().get("caracteres", 0)
     quantidade = requests.get("http://127.0.0.1:5000/receber-valor").json().get("quantidade", 0)
 def gerador():
-    while True:
-            Token = ""
-            for _ in range(Caracteres):
-                caracter = string.ascii_letters + string.digits + string.punctuation
-                Token += random.choice(caracter)
-            return Token
+    if quantidade < 1 or Caracteres < 1:
+        while True:
+                Token = ""
+                for _ in range(Caracteres):
+                    caracter = string.ascii_letters + string.digits + string.punctuation
+                    Token += random.choice(caracter)
+                return Token
 
 def gerador_com_especial():
     while True:

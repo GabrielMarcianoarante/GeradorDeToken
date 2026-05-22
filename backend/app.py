@@ -57,7 +57,7 @@ def index():
 @app.route("/receber-valor", methods=["POST", "GET"])
 def recebertoken():
     if request.method == "POST":
-        data = request.request.get_json()
+        data = request.get_json()
         token = data.get("token")
         print(f"Token recebido: {token}")
         return jsonify({"mensagem": "Token recebido com sucesso!"})
@@ -66,7 +66,7 @@ def recebertoken():
 
 @app.route("/quantidade", methods=["POST"])
 def receber_quantidade():
-    data = request .request.get_json()
+    data = request.get_json()
     quantidade = data.get("quantidade")
     print(f"Quantidade recebida: {quantidade}")
     return jsonify({"mensagem": "Quantidade recebida com sucesso!"})
